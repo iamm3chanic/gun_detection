@@ -105,11 +105,6 @@ def process_video(model, input_path="video-gun.mp4", output_path="output.mp4"):
     print(f"Video saved to {output_path}")
 
 
-# Пример использования:
-model = get_trained_model()
-process_video(model, "input.mp4")
-
-
 def save_results_with_plot(results, image_path, output_file="result.png", metrics=None):
     # Рисуем bbox'ы
     img = np.array(Image.open(image_path))
@@ -133,14 +128,15 @@ def save_results_with_plot(results, image_path, output_file="result.png", metric
 
 
 if __name__ == "__main__":
-    model = get_trained_model()
+    model = get_trained_model("runs/best_yolov8n.pt")
+    #model = get_trained_model()
     # res = predict_and_show(model, PIC1)
     # metrics = calculate_metrics(model, PIC2)
     # print(f"Metrics: {metrics}")
 
-    results = model.predict(PIC1)
-    save_results_with_plot(results, PIC1)
+    results = model.predict(PIC2)
+    save_results_with_plot(results, PIC2)
 
-    process_video(model)
+    #process_video(model)
 
 
