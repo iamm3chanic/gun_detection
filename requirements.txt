@@ -5,3 +5,5 @@ pandas
 ultralytics
 torch
 roboflow
+opencv-python==4.8.0
+Pillow
