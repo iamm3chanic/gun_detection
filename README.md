@@ -10,19 +10,19 @@
 ## 📸 Screenshots  
 - Detection                                                                           
 
-![Detection](https://github.com/iamm3chanic/gun_detection/screenshots/detection.png) 
+![Detection](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/detection.png) 
 
 - Segmentation
 
-![Segmentation](https://github.com/iamm3chanic/gun_detection/screenshots/segmentation.png)   
+![Segmentation](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/segmentation.png)   
 
 - Classification
 
-![Classification](https://github.com/iamm3chanic/gun_detection/screenshots/classification.png)   
+![Classification](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/classification.png)
 
 ## Video
 
-[![Watch the detection video](https://github.com/iamm3chanic/gun_detection/screenshots/video_preview.png)](https://github.com/iamm3chanic/gun_detection/screenshots/video_gun_36sec_YOLOv8n_detection)
+[![Watch the detection video](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/video_preview.png)](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/video_gun_36sec_YOLOv8n_detection.mp4)
 
 
 ## 📊 Metrics  
