@@ -1,0 +1,7 @@
+streamlit
+streamlit_option_menu
+numpy>=1.26.1
+pandas
+ultralytics
+torch
+roboflow
