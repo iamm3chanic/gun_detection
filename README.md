@@ -79,6 +79,37 @@ onnxruntime==1.22.1
 
 3. [Roboflow Gun Classification](https://universe.roboflow.com/project-tyaeb/gun-classification)
 
+### Augmentation Strategies
+
+
+```yaml
+augmentations:
+  - HorizontalFlip (p=0.5)
+  - Rotate (±30°)
+  - RandomBrightnessContrast (p=0.3)
+  - CutOut (max_h_size=20, max_w_size=20)
+```
+
+### Training Setup
+
+Hardware: Google Colab T4 GPU (16GB VRAM).
+
+Hyperparameters:
+
+```yaml
+YOLOv8n-seg:
+  epochs: 100
+  batch: 16
+  imgsz: 640
+  optimizer: AdamW
+  lr0: 0.001
+  weight_decay: 0.0005
+Classifier:
+  epochs: 50
+  lr: 1e-3
+  scheduler: CosineAnnealingLR
+```
+
 ## ⚠️ Known Issues
 Segmentation may fail on small objects.
 
