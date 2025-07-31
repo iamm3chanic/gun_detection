@@ -288,7 +288,43 @@ elif selected_technology == 'Segmentation':
 elif selected_technology == 'Classification':
     st.title("Weapon classification")
     model_name = st.selectbox("Model", list(MODELS["Classification"].keys()))
-    st.info("Work in progress! Will identify weapon types (AK-47, M16, etc).")
+    st.info("Development in progress! Will add more weapon types (AK-47, M16, etc).")
+
+    uploaded_file = st.file_uploader(
+        "Load photo/video",
+        type=ALLOWED_EXTENSIONS,
+        help=f"Supported formats: {', '.join(ALLOWED_EXTENSIONS)}"
+    )
 
     if uploaded_file:
-        st.warning("Classification models are being optimized - stay tuned!")
+        try:
+            model = load_model(model_name, type='Classification')
+            file_ext = uploaded_file.name.split(".")[-1].lower()
+
+            # Обработка фото
+            if file_ext in ["jpg", "jpeg", "png", "tiff", "tif"]:
+                image = Image.open(uploaded_file)
+                image_np = np.array(image)
+
+                with st.spinner("Analysing..."):
+                    result_image, detections = process_image(model, image_np)
+                    st.image(result_image, caption="Result", use_container_width=True)
+
+                    if detections == 0:
+                        st.warning("Nothing was found! Try a different model.")
+                    else:
+                        st.success(f"Objects found: {detections}")
+
+                        # Конвертируем результат в байты
+                        img_bytes = cv2.imencode(".jpg", result_image)[1].tobytes()
+
+                        st.download_button(
+                            label="Download result",
+                            data=img_bytes,
+                            file_name=f"{uploaded_file.name.split('.')[0]}_{model_name}_detection.jpg",
+                            mime="image/jpeg"
+                        )
+        except:
+            st.warning(f"⚠️ Model under development. Fallback to YOLOv8.")
+            # Fallback to a default model if needed
+            model = YOLO("runs/best_yolov8n-class.pt")
