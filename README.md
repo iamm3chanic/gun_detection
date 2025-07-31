@@ -23,7 +23,7 @@
 
 ## 🎥 Video
 
-[![Watch the detection video](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/video_preview.png)](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/video_short_YOLOv8n_detection.mp4)
+[![Watch the detection video](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/video_preview.png)](https://github.com/iamm3chanic/gun_detection/blob/master/screenshots/video_gun_36sec_YOLOv8n_detection.mp4)
 
 
 ## 📊 Metrics  
